@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: legalsys-db
+    restart: always
+    environment:
+      POSTGRES_DB: legalsysdb
+      POSTGRES_USER: legalsysuser
+      POSTGRES_PASSWORD: legalsyspass616
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - legalsys-net  # 🔧 ¡agregado aquí!
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: legalsys-app
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/legalsysdb
+      SPRING_DATASOURCE_USERNAME: legalsysuser
+      SPRING_DATASOURCE_PASSWORD: legalsyspass616
+    networks:
+      - legalsys-net
+
+volumes:
+  pgdata:
+
+networks:
+  legalsys-net:
+    driver: bridge
