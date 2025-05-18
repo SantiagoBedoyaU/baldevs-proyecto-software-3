@@ -24,11 +24,10 @@ public class SecurityConfig {
 	@Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(csrf -> csrf.disable())
-            .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/users/**").permitAll()
-                .requestMatchers("/api/notifications/**").permitAll()
-                .anyRequest().authenticated()
-            )
+            // .authorizeHttpRequests(auth -> auth
+            //     .requestMatchers("/legalsys/casojuridico/**").permitAll()
+            //     .anyRequest().authenticated()
+            // )
             .headers(headers -> headers
                     .contentSecurityPolicy(csp -> csp
                             .policyDirectives("frame-ancestors 'self' https://dominio-confiable.com;")

@@ -24,7 +24,7 @@ public class CasoJuridico {
     private Long id;
     
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_datos_basicos", referencedColumnName = "id", nullable = false)
     private DatosBasicos idDatosBasicos;
 
@@ -65,7 +65,7 @@ public class CasoJuridico {
     @JoinColumn(name = "id_usuario_registra",
                 referencedColumnName = "id",
                 nullable = false)
-    private Usuario idUsuarioRegistra;
+    private Entrevistador idUsuarioRegistra;
 
     @ManyToOne
     @JoinColumn(name = "id_usuario_asignado",

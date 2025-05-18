@@ -2,6 +2,7 @@ package com.example.LegalSys.model;
 
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -60,5 +61,10 @@ public class EnfoqueDiferencial {
 
     @Column(name = "concepto_enfoque")
     private String conceptoEnfoque;
+
+    public Optional<CaracterizacionSocioeconomica> findById(Long id2) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+    }
 
 }
