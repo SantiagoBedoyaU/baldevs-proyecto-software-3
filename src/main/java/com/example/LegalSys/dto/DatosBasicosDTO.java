@@ -1,5 +1,7 @@
 package com.example.LegalSys.dto;
 
+import com.example.LegalSys.model.AreaDerecho;
+
 import lombok.Data;
 
 @Data
@@ -20,5 +22,5 @@ public class DatosBasicosDTO {
     private Long idCiudadDomicilio;
     private String direccion;
     private String concepto;
-    private Long idAreaDerecho;
+    private AreaDerecho idAreaDerecho;
 }

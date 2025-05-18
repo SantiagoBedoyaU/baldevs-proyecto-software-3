@@ -41,7 +41,7 @@ public class DatosBasicosService {
         datos.setIdCiudadDomicilio(municipioRepository.findById(dto.getIdCiudadDomicilio()).orElseThrow());
         datos.setDireccion(dto.getDireccion());
         datos.setConcepto(dto.getConcepto());
-        datos.setAreaDerecho(areaDerechoRepository.findById(dto.getIdAreaDerecho()).orElseThrow());
+        datos.setAreaDerecho(dto.getIdAreaDerecho());
 
         return datosBasicosRepository.save(datos);
     }
