@@ -2,6 +2,7 @@ package com.example.LegalSys.model;
 
 
 import java.util.List;
+import java.util.Optional;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -16,6 +17,8 @@ public class AreaDerecho {
     private Long id;
 
 	private String nombre;
+
+
 
     
 }
